@@ -25,19 +25,3 @@ The Google Sheets API allows a maximum of 1000 requests per 60 seconds. To handl
 3. Create a service account and download the `credentials.json` file.
 4. Share access to your Google Sheet with the service account email.
 5. Run the script to process the data and generate categorized stats.
-
-## 📁 Example
-
-```python
-# Pseudocode
-for row in sheet:
-    if source == 'google' and medium == 'cpc':
-        category = 'Google Ads'
-    elif source == 'google':
-        category = 'Google Organic'
-    elif source in ['facebook', 'instagram'] and medium == 'paid':
-        category = 'Meta Ads'
-    elif source in ['facebook', 'instagram']:
-        category = 'Meta Organic'
-    else:
-        category = 'Others'

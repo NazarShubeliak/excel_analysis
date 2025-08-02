@@ -38,7 +38,7 @@ headers = sheet.row_values(1)
 
 # Add a column for results (if necessary)
 if "Джерело трафіку" not in headers:
-    sheet.insert_cols([["Джерело трафіку"]], len(headers) + 1)
+    sheet.insert_cols([["Trafic"]], len(headers) + 1)
     headers = sheet.row_values(1)  # Updating the headlines
 
 
@@ -84,7 +84,7 @@ for category, count in sorted(category_counts.items(), key=lambda x: x[1], rever
 
 # Write statistics to a new sheet
 try:
-    stats_sheet = gc.open("order").add_worksheet(title="Statistic", rows=100, cols=2)
+    stats_sheet = gc.open(TABLE_NAME).add_worksheet(title="Statistic", rows=100, cols=2)
     stats_data = [["Category", "Count"]] + [[k, v] for k, v in category_counts.items()]
     stats_sheet.update("A1", stats_data)
     print("\nStatistics are written to a new sheet 'Statistics'")
